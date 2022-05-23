@@ -47,8 +47,6 @@
       "!src/**/*.test.js",
       "!src/index.js",
       "!src/reportWebVitals.js",
-      "!src/theme/GlobalStyle.js",
-      "!src/theme/theme.js",
       "!src/setupTests.js"
     ]
   }
