@@ -6,7 +6,6 @@ const RegisterForm = () => {
     name: "",
     username: "",
     password: "",
-    img: "",
   };
 
   const [formData, setFormData] = useState(blankFields);
@@ -36,21 +35,23 @@ const RegisterForm = () => {
   return (
     <RegisterFormStyle>
       <form autoComplete="off" noValidate onSubmit={submitRegister}>
-        <label htmlFor="name" />
+        <label htmlFor="name">Name</label>
         <input
+          type="text"
           id="name"
           value={formData.name}
           onChange={changeData}
           placeholder="Name"
         />
-        <label htmlFor="username" />
+        <label htmlFor="username">Username</label>
         <input
+          type="text"
           id="username"
           value={formData.username}
           onChange={changeData}
           placeholder="Username"
         />
-        <label htmlFor="password" />
+        <label htmlFor="password">Password</label>
         <input
           id="password"
           type="password"
