@@ -1,10 +1,12 @@
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import { NavLink } from "react-router-dom";
 
 const RegisterPage = () => {
   return (
     <>
-      <h1>User Register</h1>
+      <h2>User Register</h2>
       <RegisterForm />
+      <NavLink to="/login">Login</NavLink>
     </>
   );
 };
