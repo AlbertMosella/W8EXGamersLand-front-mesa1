@@ -1,12 +1,18 @@
-import LoginForm from "./components/LoginForm/LoginForm";
-import RegisterForm from "./components/RegisterForm/RegisterForm";
+import { Navigate, Route, Routes } from "react-router-dom";
+import GamesPage from "./pages/GamesPage/GamesPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 function App() {
   return (
     <>
       <h1>GamersLand</h1>;
-      <LoginForm />
-      <RegisterForm />
+      <Routes>
+        <Route path="/" element={<Navigate to="/games" />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/games" element={<GamesPage />} />
+      </Routes>
     </>
   );
 }
