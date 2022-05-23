@@ -1,36 +1,5 @@
 # FRONT END
 
-# Responsabilities
-
-- Datos
-  - Create User
-  - UpdateUser
-- App
-  - Render setting the router
-    - login form page
-    - register form page
-    - not found page
-    - game page
-- NotFoundPage
-  - Render a header with a text "404 page not found"
-- GamePage
-  - Render a header with a text "list of games"
-- LoginFormPage
-  - Dato:
-    - formData
-      - Create
-      - Update
-      - Delete
-  - Render a form with:
-    - label + input (username)
-    - label + input (password)
-  - Render an input type submit
-  - Onchange
-    - switch status when it receives an value
-  - Onsubmit
-    - send lanza ler item de actualizar el estado
-  - Clean form
-
 # COMPONENTS
 
 - App
@@ -93,6 +62,37 @@
 - styles
 - test
 
+# Responsabilities
+
+- Datos
+  - Create User
+  - UpdateUser
+- App
+  - Render setting the router
+    - login form page
+    - register form page
+    - not found page
+    - game page
+- NotFoundPage
+  - Render a header with a text "404 page not found"
+- GamePage
+  - Render a header with a text "list of games"
+- LoginFormPage
+  - Dato:
+    - formData
+      - Create
+      - Update
+      - Delete
+  - Render a form with:
+    - label + input (username)
+    - label + input (password)
+  - Render an input type submit
+  - Onchange
+    - switch status when it receives an value
+  - Onsubmit
+    - send lanza ler item de actualizar el estado
+  - Clean form
+
 # Architecture Pattern Redux
 
 # SliceUser
@@ -110,50 +110,3 @@
   - test
 - Login
   - login
-
-# BACKEND
-
-# DB
-
-- Model
-  - User
-
-# Server
-
-- Middlywares
-- Router
-- Controllers
-- Schemas
-
-# Middlywares
-
-- Auth
-  - test
-- Errors
-  - tests
-    - General
-    - 404
-
-# Router
-
-- User
-  - Post Login
-    - token jwt
-  - Post Register
-- Game
-  - Get games Auth
-- Supertestes x3
-
-# Controllers
-
-- UserController
-  - Login
-    - test (unit)
-  - Register
-    - test (unit)
-
-# Schemas(Joi)
-
-- Mock
-  - Test
-- User
