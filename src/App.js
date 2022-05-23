@@ -17,7 +17,7 @@ function App() {
       <AppStyle>
         <h1>GamersLand</h1>
         <Routes>
-          <Route path="/" element={<Navigate to="/games" />} />
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/games" element={<GamesPage />} />
