@@ -1,5 +1,5 @@
 const GamesPage = () => {
-  return <h1>Games</h1>;
+  return <h2>Games</h2>;
 };
 
 export default GamesPage;
