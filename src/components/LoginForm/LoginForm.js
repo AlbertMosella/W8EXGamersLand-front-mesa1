@@ -38,7 +38,7 @@ const LoginForm = () => {
         onChange={handleInputChange}
         autoComplete="off"
       />
-      <input type="submit" value="Login" />
+      <button type="submit">Login</button>
     </form>
   );
 };
