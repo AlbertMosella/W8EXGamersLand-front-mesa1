@@ -13,7 +13,7 @@ const Error404PageComponent = styled.div`
 const Error404Page = () => {
   return (
     <Error404PageComponent>
-      <h1>ERROR 404, PAGE NOT FOUND</h1>
+      <p>ERROR 404, PAGE NOT FOUND</p>
     </Error404PageComponent>
   );
 };
