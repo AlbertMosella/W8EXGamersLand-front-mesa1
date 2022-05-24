@@ -6,7 +6,7 @@ import store from "../../redux/store/store";
 
 describe("Given a ListGame component", () => {
   describe("When it's invoked", () => {
-    test("Then it should render a title with the text 'List of all games'", () => {
+    test("Then it should render a title with a text 'List of all games'", () => {
       const expectedText = "List of all games";
       render(
         <Provider store={store}>
