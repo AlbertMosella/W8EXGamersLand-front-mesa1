@@ -37,7 +37,7 @@ describe("Given a userSlice reducer", () => {
     test("Then it should return initial state without user credentials and logged: false", () => {
       const user = {
         id: "1",
-        username: "juanca",
+        username: "juancarlos",
       };
       const expectValue = {
         id: "",
