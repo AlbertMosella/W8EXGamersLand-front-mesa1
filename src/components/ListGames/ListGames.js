@@ -1,11 +1,13 @@
-import { mockGames } from "../../mocks/games";
+import { useSelector } from "react-redux";
 import Game from "../Game/Game";
 import ListGamesStyles from "./ListGamesstyles";
 
 const ListGames = () => {
+  const games = useSelector((state) => games.state);
+
   return (
     <ListGamesStyles>
-      {mockGames.map((game) => (
+      {games.map((game) => (
         <Game />
       ))}
     </ListGamesStyles>
