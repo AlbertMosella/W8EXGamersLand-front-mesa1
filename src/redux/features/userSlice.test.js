@@ -1,4 +1,3 @@
-import { useReducer } from "react";
 import userReducer, {
   loginActionCreator,
   logoutActionCreator,
@@ -25,11 +24,17 @@ describe("Given a userSlice reducer", () => {
         username: "juanca",
       };
 
+      const loggedUser = {
+        id: "1",
+        username: "juanca",
+        logged: true,
+      };
+
       const action = loginActionCreator(user);
 
       const receivedValue = userReducer({}, action);
 
-      expect(receivedValue).toEqual(user);
+      expect(receivedValue).toEqual(loggedUser);
     });
   });
 
@@ -42,10 +47,11 @@ describe("Given a userSlice reducer", () => {
       const expectValue = {
         id: "",
         username: "",
+        logged: false,
       };
 
       const actionLogin = loginActionCreator(user);
-      const receivedValue = userReducer({}, actionLogin);
+      userReducer({}, actionLogin);
       const actionLogout = logoutActionCreator();
       const logoutStatedValue = userReducer(user, actionLogout);
 
