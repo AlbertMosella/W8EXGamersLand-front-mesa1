@@ -12,7 +12,7 @@ describe("Given the userThunks", () => {
       const dispatch = jest.fn();
       const expectAction = loginActionCreator(mockUserData);
 
-      const thunk = loginThunk();
+      const thunk = await loginThunk();
       await thunk(dispatch);
 
       expect(dispatch).toBeCalledWith(expectAction);

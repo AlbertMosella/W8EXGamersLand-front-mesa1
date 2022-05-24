@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginThunk } from "../../redux/thunks/userThunks";
+import { registerThunk } from "../../redux/thunks/userThunks";
 import RegisterFormStyle from "./RegisterFormStyle";
 
 const RegisterForm = () => {
@@ -33,7 +33,7 @@ const RegisterForm = () => {
 
   const submitRegister = (event) => {
     event.preventDefault();
-    dispatch(loginThunk(formData));
+    dispatch(registerThunk(formData));
     setFormData(blankFields);
   };
 

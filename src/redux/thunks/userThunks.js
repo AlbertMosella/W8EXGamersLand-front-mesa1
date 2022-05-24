@@ -3,12 +3,16 @@ import jwtDecode from "jwt-decode";
 import { loginActionCreator } from "../features/userSlice";
 
 export const loginThunk = (userData) => async (dispatch) => {
-  const { data } = await axios.post(
+  const { data, status } = await axios.post(
     `${process.env.REACT_APP_API_URL}user/login`,
     userData
   );
-  const userInfo = jwtDecode(data.token);
-  dispatch(loginActionCreator(userInfo));
+
+  if (status === 200) {
+    const userInfo = jwtDecode(data.token);
+    localStorage.setItem("token", data.token);
+    dispatch(loginActionCreator(userInfo));
+  }
 };
 
 export const registerThunk = (userData) => async (dispatch) => {
