@@ -9,9 +9,9 @@ export const loginThunk = (userData) => async (dispatch) => {
   );
 
   if (status === 200) {
-    const userInfo = jwtDecode(data.token);
+    const { id, username } = jwtDecode(data.token);
     localStorage.setItem("token", data.token);
-    dispatch(loginActionCreator(userInfo));
+    dispatch(loginActionCreator({ id, username }));
   }
 };
 
