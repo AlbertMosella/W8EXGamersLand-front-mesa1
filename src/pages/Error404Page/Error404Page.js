@@ -4,7 +4,7 @@ const Error404PageComponent = styled.div`
   display: flex;
   align-items: center;
 
-  h1 {
+  p {
     background-color: #1da1f2;
     color: #f5f8fa;
   }
