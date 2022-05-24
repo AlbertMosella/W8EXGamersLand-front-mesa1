@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import GamesPage from "./pages/GamesPage/GamesPage";
@@ -19,18 +19,18 @@ const AppStyle = styled.div`
 
 function App() {
   const { logged } = useSelector((state) => state.user);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-
-    if (token) {
+    if (token || logged) {
       const userInfo = jwtDecode(token);
 
       dispatch(loginActionCreator(userInfo));
+      navigate("/games");
     }
-  }, [dispatch]);
+  }, [dispatch, navigate, logged]);
 
   return (
     <>
