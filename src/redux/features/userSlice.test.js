@@ -1,4 +1,8 @@
-import userReducer, { loginActionCreator } from "./userSlice";
+import { useReducer } from "react";
+import userReducer, {
+  loginActionCreator,
+  logoutActionCreator,
+} from "./userSlice";
 
 describe("Given a userSlice reducer", () => {
   describe("When its invoked with an unknown action and a user as initialValue", () => {
@@ -21,11 +25,38 @@ describe("Given a userSlice reducer", () => {
         username: "juanca",
       };
 
+      const loggedUser = {
+        id: "1",
+        username: "juanca",
+        logged: true,
+      };
+
       const action = loginActionCreator(user);
 
       const receivedValue = userReducer({}, action);
 
-      expect(receivedValue).toEqual(user);
+      expect(receivedValue).toEqual(loggedUser);
+    });
+  });
+
+  describe("When it's invoked with a logout action", () => {
+    test("Then it should return initial state without user credentials and logged: false", () => {
+      const user = {
+        id: "1",
+        username: "juancarlos",
+      };
+      const expectValue = {
+        id: "",
+        username: "",
+        logged: false,
+      };
+
+      const actionLogin = loginActionCreator(user);
+      userReducer({}, actionLogin);
+      const actionLogout = logoutActionCreator();
+      const logoutStatedValue = userReducer(user, actionLogout);
+
+      expect(logoutStatedValue).toEqual(expectValue);
     });
   });
 });
