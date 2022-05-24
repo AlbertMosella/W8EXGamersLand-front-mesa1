@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import ListGames from "./ListGames";
 import { mockGames } from "../../mocks/games";
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import store from "../../redux/store/store";
 
 jest.mock("react-redux", () => ({
