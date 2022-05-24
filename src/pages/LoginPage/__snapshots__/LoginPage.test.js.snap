@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a LoginPage Component When it's rendered Then it alwais show the same structure 1`] = `
+Array [
+  <h2>
+    User Login
+  </h2>,
+  <div
+    className="sc-bczRLJ eeDLXW"
+  >
+    <form
+      noValidate={true}
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        autoComplete="off"
+        id="username"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        autoComplete="off"
+        id="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+      <button
+        className="form-button"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>,
+  <a
+    className=""
+    href="/register"
+    onClick={[Function]}
+  >
+    Register
+  </a>,
+]
+`;
