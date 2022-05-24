@@ -1,5 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import store from "../../redux/store/store";
 import RegisterForm from "./RegisterForm";
 
 describe("Given a RegisterForm component", () => {
@@ -8,7 +11,13 @@ describe("Given a RegisterForm component", () => {
       const labelToFind = "Username";
       const inputText = "hello";
 
-      render(<RegisterForm />);
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <RegisterForm />
+          </BrowserRouter>
+        </Provider>
+      );
 
       const label = screen.getByLabelText(labelToFind);
       userEvent.type(label, inputText);
@@ -24,7 +33,13 @@ describe("Given a RegisterForm component", () => {
       const passwordLabel = "Password";
       const inputText = "hello";
 
-      render(<RegisterForm />);
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <RegisterForm />
+          </BrowserRouter>
+        </Provider>
+      );
 
       const name = screen.getByLabelText(nameLabel);
       const username = screen.getByLabelText(usernameLabel);
