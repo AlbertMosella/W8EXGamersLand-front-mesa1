@@ -7,6 +7,7 @@ const ListGames = () => {
 
   return (
     <ListGamesStyles>
+      <h3>List of all games</h3>
       {allGames.map((game) => (
         <Game game={game} key={game.id} />
       ))}
