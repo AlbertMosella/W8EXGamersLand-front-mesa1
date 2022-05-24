@@ -6,14 +6,14 @@ import {
 
 const url = process.env.REACT_APP_API_URL;
 
-export const loadGamesThunk = () => (dispatch) => {
-  const { data: games } = axios.get(`${url}games`);
+export const loadGamesThunk = () => async (dispatch) => {
+  const { data } = await axios.get(`${url}games`);
 
-  dispatch(loadAllGamesActionCreator(games));
+  dispatch(loadAllGamesActionCreator(data));
 };
 
-export const getGameThunk = (idGame) => (dispatch) => {
-  const { data: game } = axios.get(`${url}games/${idGame}`);
+export const getGameThunk = (idGame) => async (dispatch) => {
+  const { data: game } = await axios.get(`${url}games/${idGame}`);
 
   dispatch(loadGameActionCreator(game));
 };

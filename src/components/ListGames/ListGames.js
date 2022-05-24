@@ -3,12 +3,13 @@ import Game from "../Game/Game";
 import ListGamesStyles from "./ListGamesstyles";
 
 const ListGames = () => {
-  const games = useSelector((state) => state.games);
+  const { allGames } = useSelector((status) => status.games);
 
   return (
     <ListGamesStyles>
-      {games.map((game) => (
-        <Game game={game} />
+      <h3>List of all games</h3>
+      {allGames.map((game) => (
+        <Game game={game} key={game.id} />
       ))}
     </ListGamesStyles>
   );
